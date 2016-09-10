@@ -8,37 +8,15 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-
-  ///* will be "on top", if browser supports it */
-  //background-image: linear-gradient($bg-gradient-from, $bg-gradient-to);
-
-  min-height: 1450px;
 }
 
-.wr {
-  background-color: rgba(68,124,157,1);
+.mux {
+  background-color: white;
 
-  .bg-gradient {
-    width: 100%;
-    height: 80vw;
-    position: absolute;
-    margin-top: -44vw;
-    top: 0px;
-    z-index: -1;
-
-    background: rgba(115,187,192,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(115,187,192,1) 0%, rgba(68,124,157,1) 52%, rgba(68,124,157,1) 73%, rgba(68,124,157,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(115,187,192,1)), color-stop(52%, rgba(68,124,157,1)), color-stop(73%, rgba(68,124,157,1)), color-stop(100%, rgba(68,124,157,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(115,187,192,1) 0%, rgba(68,124,157,1) 52%, rgba(68,124,157,1) 73%, rgba(68,124,157,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(115,187,192,1) 0%, rgba(68,124,157,1) 52%, rgba(68,124,157,1) 73%, rgba(68,124,157,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(115,187,192,1) 0%, rgba(68,124,157,1) 52%, rgba(68,124,157,1) 73%, rgba(68,124,157,1) 100%);
-    background: radial-gradient(ellipse at center, rgba(115,187,192,1) 0%, rgba(68,124,157,1) 52%, rgba(68,124,157,1) 73%, rgba(68,124,157,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73bbc0', endColorstr='#447c9d', GradientType=1 );
-  }
 
   h1, h2, h3, h4, h5 {
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: black;
   }
 
   @keyframes highlight-button-in {
@@ -61,7 +39,7 @@ body {
 
   button {
     &.primary-btn {
-      background-image: linear-gradient(240deg, #f2c53b, $green-button-gradient-from);
+      background-image: linear-gradient(240deg, $button-gradient-to, $button-gradient-from);
       background-size: 400% 400%;
       border: none;
       border-radius: 40px;
@@ -84,9 +62,9 @@ body {
   }
 
   a {
-    color: white;
+    color: black;
     &:hover {
-      color: $green-button-gradient-to;
+      color: $button-gradient-to;
     }
   }
 
@@ -96,7 +74,7 @@ body {
 
   .sk-cube-grid {
     div {
-      background-color: $green-button-gradient-to;
+      background-color: $button-gradient-to;
     }
   }
 

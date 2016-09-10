@@ -1,10 +1,10 @@
-import { WorkremoteFrontendPage } from './app.po';
+import { muxFrontendPage } from './app.po';
 
-describe('workremote-frontend App', function() {
-  let page: WorkremoteFrontendPage;
+describe('mux-frontend App', function() {
+  let page: muxFrontendPage;
 
   beforeEach(() => {
-    page = new WorkremoteFrontendPage();
+    page = new muxFrontendPage();
   });
 
   it('should display message saying app works', () => {

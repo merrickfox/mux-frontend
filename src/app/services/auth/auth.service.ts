@@ -7,7 +7,15 @@ declare var Auth0Lock: any;
 @Injectable()
 export class Auth {
   // Configure Auth0
-  lock = new Auth0Lock('wn8VNyDDuEHIioxZCL0eG2evRnpAM32L', 'workremoteio.eu.auth0.com', {});
+  lock = new Auth0Lock('blxZlzL6cjm6O40mf9YhMDjTStHuh8l0', 'muxapp.eu.auth0.com', {
+    additionalSignUpFields: [{
+      name: "username",                              // required
+      placeholder: "enter your username",            // required
+      validator: function(value) {                  // optionals
+        return value.length < 15;
+      }
+    }]
+  });
 
   constructor() {
     // Add callback for lock `authenticated` event

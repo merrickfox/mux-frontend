@@ -4,7 +4,7 @@ import { Observable }     from 'rxjs/Observable';
 
 @Injectable()
 export class JobsService {
-  private jobsUrl = 'https://2fv2s26jt9.execute-api.eu-west-1.amazonaws.com/dev/jobs';  // move to some consts
+  private jobsUrl = 'https://ux2zq2o3q1.execute-api.eu-west-1.amazonaws.com/dev/posts';  // move to some consts
   constructor(private http: Http) { }
 
   getJobs () {

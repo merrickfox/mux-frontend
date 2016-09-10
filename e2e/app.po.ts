@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor/globals';
 
-export class WorkremoteFrontendPage {
+export class muxFrontendPage {
   navigateTo() {
     return browser.get('/');
   }

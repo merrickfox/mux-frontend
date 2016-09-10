@@ -10,8 +10,6 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { JobsListComponent } from './components/jobs-list/jobs-list.component';
-import { JobComponent } from './components/job/job.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +17,7 @@ import { JobComponent } from './components/job/job.component';
     AboutComponent,
     HomeComponent,
     PageNotFoundComponent,
-    NavBarComponent,
-    JobsListComponent,
-    JobComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

@@ -6,12 +6,13 @@
 <nav class="container">
   <div class="logo">
     <a href="/">
-      <h3 class="title">workremote.io</h3>
+      <h3 class="title">mux</h3>
     </a>
 
   </div>
   <a routerLink="/about" routerLinkActive="active">About</a>
-  <button class="primary-btn pull-lg-right">Login</button>
+  <button class="primary-btn pull-lg-right" (click)="auth.login()" *ngIf="!auth.authenticated()">Sign In</button>
+  <button class="primary-btn pull-lg-right" (click)="auth.logout()" *ngIf="auth.authenticated()">Sign Out</button>
 </nav>
 
 
