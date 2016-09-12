@@ -1,14 +1,15 @@
 import { Injectable }     from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
+import {HeaderService} from "../header/header.service";
 
 @Injectable()
-export class JobsService {
-  private jobsUrl = 'https://ux2zq2o3q1.execute-api.eu-west-1.amazonaws.com/dev/posts';  // move to some consts
-  constructor(private http: Http) { }
+export class PostsService {
+  private postsUrl = 'https://fug6028wqj.execute-api.eu-west-1.amazonaws.com/dev/posts';  // move to some consts
+  constructor(private http: Http, private headersService: HeaderService) { }
 
-  getJobs () {
-    return this.http.get(this.jobsUrl)
+  getPosts () {
+    return this.http.get(this.postsUrl, {headers: this.headersService.getHeaders()})
       .map(this.extractData)
   }
 

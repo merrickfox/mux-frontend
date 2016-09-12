@@ -1,5 +1,6 @@
 import { Injectable }      from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
+import {HeaderService} from "../header/header.service";
 
 // Avoid name not found warnings
 declare var Auth0Lock: any;
@@ -8,19 +9,16 @@ declare var Auth0Lock: any;
 export class Auth {
   // Configure Auth0
   lock = new Auth0Lock('blxZlzL6cjm6O40mf9YhMDjTStHuh8l0', 'muxapp.eu.auth0.com', {
-    additionalSignUpFields: [{
-      name: "username",                              // required
-      placeholder: "enter your username",            // required
-      validator: function(value) {                  // optionals
-        return value.length < 15;
-      }
-    }]
+    auth: {
+      redirect: false
+    }
   });
 
-  constructor() {
+  constructor(private headerService: HeaderService) {
     // Add callback for lock `authenticated` event
     this.lock.on('authenticated', (authResult) => {
       localStorage.setItem('id_token', authResult.idToken);
+      this.headerService.onLoggedIn();
     });
   }
 
@@ -32,11 +30,19 @@ export class Auth {
   public authenticated() {
     // Check if there's an unexpired JWT
     // It searches for an item in localStorage with key == 'id_token'
-    return tokenNotExpired();
+    let loggedIn: boolean = tokenNotExpired();
+    if (loggedIn) {
+      this.headerService.onLoggedIn();
+    } else {
+      this.headerService.onLoggedOut();
+    }
+
+    return loggedIn;
   };
 
   public logout() {
     // Remove token from localStorage
     localStorage.removeItem('id_token');
+    this.headerService.onLoggedOut();
   };
 }
