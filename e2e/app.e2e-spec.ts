@@ -1,10 +1,10 @@
-import { muxFrontendPage } from './app.po';
+import { MuxFrontendPage } from './app.po';
 
 describe('mux-frontend App', function() {
-  let page: muxFrontendPage;
+  let page: MuxFrontendPage;
 
   beforeEach(() => {
-    page = new muxFrontendPage();
+    page = new MuxFrontendPage();
   });
 
   it('should display message saying app works', () => {

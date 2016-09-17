@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor/globals';
 
-export class muxFrontendPage {
+export class MuxFrontendPage {
   navigateTo() {
     return browser.get('/');
   }

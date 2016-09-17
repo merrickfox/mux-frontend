@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, RequestOptions } from '@angular/http';
-
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app.routing';
 import { CommonModule } from '@angular/common';
@@ -13,6 +12,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostComponent } from './components/post/post.component';
 import {HeaderService} from "./services/header/header.service";
+import {AuthResolver} from "./services/resolvers/auth/auth.resolver";
 import {Auth} from "./services/auth/auth.service";
 
 @NgModule({
@@ -35,7 +35,8 @@ import {Auth} from "./services/auth/auth.service";
   providers: [
     appRoutingProviders,
     HeaderService,
-    Auth
+    Auth,
+    AuthResolver
   ],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]
